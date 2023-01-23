@@ -57,16 +57,14 @@ def click_handler(pos):
                 Find = True
             else:
                 if tab[y][x] == 0:
+                    Find = True
                     if round % 2 == 0: # joueur 1 ou 2 (en fonction du round)
-                        Find = True
                         board.create_oval(x*e,y*e,(x+1)*e,(y+1)*e,fill=Player[0][1],width=3)
                         tab[y][x] = 1
-                        round += 1
                     else:
-                        Find = True
                         board.create_oval(x*e,y*e,(x+1)*e,(y+1)*e,fill=Player[1][1],width=3)
                         tab[y][x] = 2
-                        round += 1
+                    round += 1
                 else:
                     y -= 1
 
